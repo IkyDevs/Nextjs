@@ -1,10 +1,11 @@
 "use client";
 
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbars from "./Navbar";
-import { useState } from "react";
+import Navbars from "./components/ui/Navbar";
+import { usePathname } from "next/navigation";
+
+const disableNav = ["/login", "/register"];
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +22,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [state, setState] = useState(0);
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbars />
-        <div>Layout {state}</div>
-        <button onClick={() => setState(state + 1)}>Click</button>
+        {!disableNav.includes(pathname) && <Navbars />}
+
         {children}
       </body>
     </html>
