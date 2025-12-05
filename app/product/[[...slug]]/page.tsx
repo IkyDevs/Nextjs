@@ -29,7 +29,7 @@ export default async function ProductPage(props: ProductPageProps) {
   return (
     <>
       {/* <h1>{resolvedParams.slug ? "Detail Product Page" : "Product Page"}</h1> */}
-      <div className="grid grid-cols-4 mt-5 gap-5 place-items-center">
+      <div className="grid grid-cols-4 mt-5 gap-5 place-items-center" >
         {product.data.length > 0 &&
           product.data.map((item: any) => (
             <div className="w-full max-w-sm bg-neutral-primary-soft p-6   rounded-xl shadow-xs" key={item.id}>
