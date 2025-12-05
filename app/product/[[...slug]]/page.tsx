@@ -5,7 +5,8 @@ type ProductPageProps = {
 };
 
 async function getData() {
-  const response = await fetch("http://localhost:3000/product");
+  // const response = await fetch("https://fakestoreapi.com/products");
+  const response = await fetch("https://dummyjson.com/products");
   if (!response.ok) {
     throw new Error("Failed To Fetch Data");
   }
@@ -21,13 +22,13 @@ export default async function ProductPage(props: ProductPageProps) {
     <>
       {/* <h1>{resolvedParams.slug ? "Detail Product Page" : "Product Page"}</h1> */}
       <div className="grid grid-cols-4 mt-5 gap-5 place-items-center">
-        {product.data.length > 0 &&
-          product.data.map((item: any) => (
-            <div className="w-full max-w-sm bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs">
+        {product.products.length > 0 &&
+          product.products.map((item: any) => (
+            <div className="w-full max-w-sm bg-neutral-primary-soft p-6   rounded-xl shadow-xs" key={item.id}>
               <a href="#">
                 <img
                   className="rounded-base mb-6 object-cover h-96 w-full"
-                  src={item.image}
+                  src={item.thumbnail}
                   alt="product image"
                 />
               </a>
@@ -91,7 +92,7 @@ export default async function ProductPage(props: ProductPageProps) {
                     </svg>
                   </div>
                   <span className="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">
-                    4.8 out of 5
+                    {item.rating}
                   </span>
                 </div>
                 <a href="#">
