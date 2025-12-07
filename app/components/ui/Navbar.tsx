@@ -8,7 +8,7 @@ export default function Navbars() {
   return (
     <>
       <div className="flex justify-between   p-2 shadow">
-        <h1 className="font-bold text-3xl">Navbar</h1>
+        <h1 className="font-bold text-3xl">IkyDevs</h1>
         <ul className="flex gap-x-10 justify-center items-center ml-5 cursor-pointer">
           <Link href={"/"}>
             <li
@@ -41,6 +41,17 @@ export default function Navbars() {
               }`}
             >
               profile
+            </li>
+          </Link>
+          <Link href={"/dashboard"}>
+            <li
+              className={`${
+                pathname === "/about/profile"
+                  ? "text-teal-300 font-bold italic"
+                  : "text-white"
+              }`}
+            >
+              Dashboard
             </li>
           </Link>
           <Link href={"/product"}>

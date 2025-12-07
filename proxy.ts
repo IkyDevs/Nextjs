@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 
 // This function can be marked `async` if using `await` inside
 export function proxy(request: NextRequest) {
-  const isLogin = false;
+  const isLogin = true;
   if (!isLogin) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
