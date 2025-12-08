@@ -12,12 +12,12 @@ export default async function DetailProductPage(props: any) {
   return (
     <Modal>
       <img
-        src={product.images}
+        src={product.image}
         alt="product image"
         className=" w-full object-cover aspect-square col-span-2"
       />
       <div className="bg-white text-black p-4 px-6">
-        <h3>{product.title}</h3>
+        <h3>{product.name}</h3>
         <p>price : {product.price}</p>
       </div>
     </Modal>
