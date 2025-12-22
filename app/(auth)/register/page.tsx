@@ -1,3 +1,6 @@
+"use client"
+
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 
 export default function RegisterPage() {
@@ -21,7 +24,7 @@ export default function RegisterPage() {
 
 
           <div className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
-            
+
             <input
               type="text"
               placeholder="username"
@@ -113,8 +116,8 @@ export default function RegisterPage() {
            Sign Up
           </button>
           <p className="text-gray-500/90 text-sm mt-4">
-            Don’t have an account?{" "}
-           <Link href="/login" className="hover:underline text-white">Login</Link>
+            Already have an account?{" "}
+           <button onClick={() => signIn()}>Login</button>
           </p>
         </form>
       </div>
