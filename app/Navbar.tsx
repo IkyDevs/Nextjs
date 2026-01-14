@@ -66,6 +66,17 @@ export default function Navbars() {
               product
             </li>
           </Link>
+          <Link href={"/VillaLandingPage"}>
+            <li
+              className={`${
+                pathname === "/VillaLandingPage"
+                  ? "text-teal-300 font-bold italic"
+                  : "text-white"
+              }`}
+            >
+              villa
+            </li>
+          </Link>
         </ul>
         <div className="flex">
           {status === "authenticated" ? (
