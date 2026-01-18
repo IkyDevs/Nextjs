@@ -6,7 +6,9 @@ import React from "react";
 export default async function DetailProductPage(props: any) {
   const { params } = props;
   const { id } = await params;
-  const product = await getData("https://dummyjson.com/products/" + id);
+  const product = await getData("http://localhost:3000/api/product?id=" + id, {
+    next: { revalidate: 10 },
+  }).then((res) => res.json());
   console.log(product);
 
   return (

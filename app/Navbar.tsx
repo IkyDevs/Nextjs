@@ -6,6 +6,7 @@ export default function Navbars() {
   const pathname = usePathname();
   const router = useRouter();
   const { status }: { status: string } = useSession();
+
   return (
     <>
       <div className="flex justify-between   p-2 shadow">
@@ -66,15 +67,37 @@ export default function Navbars() {
               product
             </li>
           </Link>
-          <Link href={"/VillaLandingPage"}>
+          <Link href={"/users"}>
             <li
               className={`${
-                pathname === "/VillaLandingPage"
+                pathname === "/users"
                   ? "text-teal-300 font-bold italic"
                   : "text-white"
               }`}
             >
-              villa
+              users
+            </li>
+          </Link>
+          <Link href={"/post"}>
+            <li
+              className={`${
+                pathname === "/post"
+                  ? "text-teal-300 font-bold italic"
+                  : "text-white"
+              }`}
+            >
+              Post
+            </li>
+          </Link>
+          <Link href={"/todos"}>
+            <li
+              className={`${
+                pathname === "/todos"
+                  ? "text-teal-300 font-bold italic"
+                  : "text-white"
+              }`}
+            >
+              todos
             </li>
           </Link>
         </ul>

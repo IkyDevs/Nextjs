@@ -1,4 +1,4 @@
-export async function getData(url: string) {
+export async function getData(url: string, p0: { next: { revalidate: number; }; }) {
   // const response = await fetch("https://fakestoreapi.com/products");
   // const response = await fetch("https://dummyjson.com/products", {
   //   cache: "no-store",

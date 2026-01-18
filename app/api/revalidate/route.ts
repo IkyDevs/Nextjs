@@ -8,8 +8,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       status: 400,
       message: "Tag is required",
-    })
+    });
   }
 
-  
+  revalidateTag(tag, "seconds");
+  return NextResponse.json({
+    status: 200,
+    revalidate: true,
+    now: Date.now(),
+    message: "Revalidation successful",
+  });
 }

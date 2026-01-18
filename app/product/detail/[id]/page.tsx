@@ -5,12 +5,14 @@ import React from "react";
 export default async function DetailProductPage(props: any) {
   const { params } = props;
   const { id } = await params;
-  const product = await getData("https://localhost:3000/api/product/?id=" + id);
+  const product = await getData("https://localhost:3000/api/product/?id=" + id, {
+    next: { revalidate: 10 },
+  });
   console.log(product);
 
   return (
     <div className="container mx-auto my-10">
-      <div className="w-1/2 mx-auto border border-white">
+      <div className="w-1/4 mx-auto border border-white">
         <img
           src={product.image}
           alt="product image"

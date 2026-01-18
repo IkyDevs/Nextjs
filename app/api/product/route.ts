@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const data = [
   {
-    id: 1,
+    id: Date.now(),
     name: "Nike Air Force 1 Gore-tex",
     rating: 4.5,
     price: 2489000,
@@ -11,28 +11,28 @@ const data = [
       "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/4cde9042-7bbf-4bc3-9870-2891c27e7888/AIR+FORCE+1+GTX.png",
   },
   {
-    id: 2,
+    id: Date.now(),
     name: "Product 2",
     rating: 3.5,
     price: 711,
     image: "https://dummyimage.com/300",
   },
   {
-    id: 3,
+    id: Date.now(),
     name: "Product 3",
     rating: 2.5,
     price: 991,
     image: "https://dummyimage.com/300",
   },
   {
-    id: 4,
+    id: Date.now(),
     name: "Product 4",
     rating: 2.5,
     price: 776,
     image: "https://dummyimage.com/300",
   },
   {
-    id: 5,
+    id: Date.now(),
     name: "Product 4",
     rating: 2.5,
     price: 776,

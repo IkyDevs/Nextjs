@@ -1,7 +1,17 @@
-export default function ProductsPage() {
+"use client"
+export default function AdminProductPage() {
+  const revalidate = async () => {
+    await fetch("https://localhost:3000/api/revalidate?tag=products", {
+      method: "POST",
+    });
+  }
   return (
-    <div className="w-full h-96 bg-gray-300 text-black rounded-2xl flex justify-center items-center gap-10 ">
-      <h1>Products Page</h1>
-    </div>
-  );
-}
+    <>
+      <div>
+        <h1 className="text-4xl font-bold text-center mt-10">Admin Product Page</h1>
+        <button onClick={() => revalidate()}>Revalidate now</button>
+      </div>
+    </>
+)
+};
+

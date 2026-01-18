@@ -13,6 +13,7 @@ export default function DashboardPage() {
     if (status === "unauthenticated" || session?.user.role !== "admin") {
       router.push("/login");
     }
+
   }, [router, status, session?.user.role]);
 
   if (status === "loading") {
